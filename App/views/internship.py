@@ -21,14 +21,29 @@ def get_position(position_id):
         return jsonify({'error': 'Position not found'}), 404
     return jsonify(position.get_json())
 
-@api_internship_views.route('/', methods=['POST'])
+@api_internship_views.route('/create', methods=['POST'])
+def create_position():
+    data = request.json
+    position = create_internship_position(
+        data['employer_id'], data['title'], data['description'], data['requirements']
+    )
+    return jsonify({
+        'message': f"Position '{position.title}' created", 
+        'id': position.id,
+        'title': position.title,
+        'employer_id': position.employer_id,
+        'description': position.description,
+        'requirements': position.requirements
+    }), 201
+
+""" @api_internship_views.route('/create', methods=['POST'])
 def create_position():
     data = request.json
     position = create_internship_position(
         data['employer_id'], data['title'], data['description'], data['requirements']
     )
     return jsonify({'message': f"Position '{position.title}' created", 'id': position.id}), 201
-
+ """
 @api_internship_views.route('/<int:position_id>', methods=['PUT'])
 @jwt_required()
 def update_position(position_id):
