@@ -8,7 +8,7 @@ from App.controllers import (
 
 api_user_views = Blueprint('api_user_views', __name__, url_prefix='/api/users')
 
-@api_user_views.route('/', methods=['GET'])
+@api_user_views.route('/all_users', methods=['GET'])
 @jwt_required()
 def list_users():
     return jsonify(get_all_users_json())
