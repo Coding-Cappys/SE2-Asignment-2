@@ -20,20 +20,47 @@
 ### Test Case: Review Shortlisted Candidates
 **Steps:**
 1. Login as employer
-2. View shortlisted candidates for a position
-3. Accept/reject candidates
+2. Navigate to "View Shortlisted Students"
+3. Select a position
 
 **Success Criteria:**
 - Can view all shortlisted candidates
-- Can successfully accept/reject candidates
-- Status updates immediately
+- List displays correct student details
 
-## 2. Staff Functions
+### Test Case: Accept or Reject Student
+**Steps:**
+1. Navigate to "View Shortlisted Students"
+2. Select a student
+3. Click Accept or Reject
+   
+ **Success Criteria:**  
+- System updates student’s application status correctly
+
+## 2.1 Staff Functions
+
+### Test Case: Select Internship Position
+**Steps:**
+1.Navigate to "Internship Position and Shortlist"
+2.Open the internship position dropdown
+3.Select the desired position
+
+**Success Criteria:**
+- Details of the selected position (title, employer, requirements) are displayed correctly
+
+### Test Case: Search for Students
+**Steps:**
+1.Open "Add Student to Shortlist"
+2.Enter search criteria (name, GPA, program, skills)
+3.Click Search
+
+**Success Criteria:**
+- List of students matching the criteria appears
+- Student records show essential details (name, program, GPA, application files)
 
 ### Test Case: Shortlist Students
 **Steps:**
 1. Login as staff
-2. Select internship position
+2. Navigate to "Add Student to Shortlist"
 3. Search for eligible students
 4. Add students to shortlist
 
@@ -44,13 +71,52 @@
 
 ## 3. Student Functions
 
+### Test Case: Create Application
+**Steps:**
+1. Click on "My documents" or navigate to "My Application Documents"
+3. Fill out required fields
+4. Submit application
+
+**Success Criteria:**
+- Application is saved as "Submitted to Staff" / "Pending Staff Review"
+
 ### Test Case: View Shortlisted Positions
 **Steps:**
 1. Login as student
-2. View positions they're shortlisted for
+2. Navigate to "My Shortlisted Positions"
 3. Check status of applications
 
 **Success Criteria:**
 - Can see all positions they're shortlisted for
 - Status (pending/accepted/rejected) is clearly displayed
 - Can view position details
+
+### Test Case: Accept
+**Steps:**
+1. Navigate to "Employer Response"
+2. Click Accept
+3. Confirm action
+
+**Success Criteria:**
+- System updates offer to accepted
+
+### Test Case: Reject
+**Steps:**
+1. Navigate to "Employer Response"
+2. Click Reject
+3. Confirm action
+
+**Success Criteria:**
+- System updates offer to rejected
+
+jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+## 1. Unauthorized Access
+
+### Test Case: Users who are not logged in
+**Steps:**
+1. Attempt to access "My Shortlisted Positions" 
+
+**Success Criteria:**
+- System redirects to login or displays an error message
+
+
